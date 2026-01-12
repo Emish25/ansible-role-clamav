@@ -5,7 +5,7 @@
   become_method: sudo
   become_user: root
   vars:
-    ansible_become_password: "Ayden@0209"  # ← ICI aussi !
+    ansible_become_password: "X"  # ← ICI aussi !
   
   roles:
     - role: .
