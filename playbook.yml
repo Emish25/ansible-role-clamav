@@ -1,6 +1,6 @@
 ---
-- name: Installer ClamAV via le rôle inclus
+- name: Installer ClamAV
   hosts: all
   become: yes
   roles:
-    - ansible-role-clamav  # Référence le rôle DANS CE DÉPÔT
+    - .  # <-- CHANGEMENT ICI
