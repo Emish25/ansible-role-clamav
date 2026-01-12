@@ -2,5 +2,12 @@
 - name: Installer ClamAV
   hosts: all
   become: yes
+  vars:
+    ansible_remote_tmp: /tmp/.ansible
+    
+  environment:
+    ANSIBLE_REMOTE_TMP: /tmp/.ansible
+    ANSIBLE_HOST_KEY_CHECKING: "False"
+    
   roles:
-    - .  # <-- CHANGEMENT ICI
+    - .
