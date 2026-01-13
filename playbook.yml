@@ -2,6 +2,7 @@
 - name: Installer ClamAV
   hosts: all
   become: true
+  become_method: sudo
   vars:
     ansible_remote_tmp: /tmp/.ansible
     
@@ -11,3 +12,9 @@
     
   roles:
     - .
+  tasks:
+    - name: Installer ClamAV
+      apt:
+        name: clamav
+        state: present
+        update_cache: yes
