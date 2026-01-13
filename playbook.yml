@@ -2,11 +2,12 @@
 - name: Installer ClamAV
   hosts: all
   become: yes
-  become_method: sudo
-  become_user: root
   vars:
-    ansible_become_password: "X"  # ← ICI aussi !
-  
+    ansible_remote_tmp: /tmp/.ansible
+    
+  environment:
+    ANSIBLE_REMOTE_TMP: /tmp/.ansible
+    ANSIBLE_HOST_KEY_CHECKING: "False"
+    
   roles:
-    - role: .
-      become: yes  # ← Forcer become sur le rôle
+    - .
