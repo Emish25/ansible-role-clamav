@@ -1,7 +1,7 @@
 ---
 - name: Installer ClamAV
   hosts: all
-  become: yes
+  become: true
   vars:
     ansible_remote_tmp: /tmp/.ansible
     
