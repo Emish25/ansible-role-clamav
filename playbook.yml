@@ -4,10 +4,14 @@
   become: yes
   become_method: sudo
   become_user: root
-  become_flags: '-H'  
-
+  become_flags: '-H'
+  
+  # AJOUTEZ CES VARIABLES
+  vars:
+    ansible_remote_tmp: /tmp/.ansible
+  
   environment:
-    ANSIBLE_REMOTE_TMP: /tmp/.ansible
+    ANSIBLE_REMOTE_TEMP: /tmp/.ansible
     ANSIBLE_HOST_KEY_CHECKING: "False"
   
   roles:
